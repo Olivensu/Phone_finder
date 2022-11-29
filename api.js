@@ -27,8 +27,8 @@ const displayPhone = (data)=>{
     console.log(data);
     const displayItem = document.getElementById('displayItem');
     displayItem.innerHTML = '';
-    spinner('block');
     document.getElementById('showdetails').innerHTML = '';
+    spinner('block');
     if(data.length>0){
         if(data.length>20){
             const dataslice = data.slice(0,20);
