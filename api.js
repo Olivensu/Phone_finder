@@ -19,24 +19,76 @@ const displayPhone = (data)=>{
     console.log(data);
     const displayItem = document.getElementById('displayItem');
     displayItem.innerHTML = '';
-    const dataslice = data.slice(0,20);
-    dataslice.forEach((item)=>{
-        const div = document.createElement('div');
-        div.classList.add('card');
-        div.classList.add('col-md-3');
-        div.classList.add('col-10');
-        div.style.margin = '10px'
-        div.innerHTML = `
-            <img src="${item.image}" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">${item.phone_name}</h5>
-              <h6 class="card-text">${item.brand}</h6>
-              <button onclick="fetchDetails('${item.slug}')" class="btn btn-primary">Details</button>
-            </div>
+    document.getElementById('showdetails').innerHTML = '';
+    if(data.length>20){
+        const dataslice = data.slice(0,20);
+        dataslice.forEach((item)=>{
+            const div = document.createElement('div');
+            div.classList.add('card');
+            div.classList.add('col-md-3');
+            div.classList.add('col-10');
+            div.style.margin = '10px'
+            div.innerHTML = `
+                <img src="${item.image}" class="card-img-top" alt="...">
+                <div class="card-body">
+                <h5 class="card-title">${item.phone_name}</h5>
+                <h6 class="card-text">${item.brand}</h6>
+                <button onclick="fetchDetails('${item.slug}')" class="btn btn-primary">Details</button>
+                </div>
+            `
+            displayItem.appendChild(div);
+        
+        });
+        const showmoreDiv = document.createElement('div');
+        showmoreDiv.classList.add('position-relative');
+        showmoreDiv.innerHTML = `
+        <button id='showMore' class="btn btn-success position-absolute top-0 start-50">Show more...</button>
         `
-        displayItem.appendChild(div);
+        displayItem.appendChild(showmoreDiv);
+    }
+    else{
+        data.forEach((item)=>{
+            const div = document.createElement('div');
+            div.classList.add('card');
+            div.classList.add('col-md-3');
+            div.classList.add('col-10');
+            div.style.margin = '10px'
+            div.innerHTML = `
+                <img src="${item.image}" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">${item.phone_name}</h5>
+                  <h6 class="card-text">${item.brand}</h6>
+                  <button onclick="fetchDetails('${item.slug}')" class="btn btn-primary">Details</button>
+                </div>
+            `
+            displayItem.appendChild(div);
+        });
+    }
+
+    //Show more
+    document.getElementById('showMore').addEventListener('click', function(){
+        const displayItem = document.getElementById('displayItem');
+        displayItem.innerHTML = '';
+        data.forEach((item)=>{
+            const div = document.createElement('div');
+            div.classList.add('card');
+            div.classList.add('col-md-3');
+            div.classList.add('col-10');
+            div.style.margin = '10px'
+            div.innerHTML = `
+                <img src="${item.image}" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">${item.phone_name}</h5>
+                  <h6 class="card-text">${item.brand}</h6>
+                  <button onclick="fetchDetails('${item.slug}')" class="btn btn-primary">Details</button>
+                </div>
+            `
+            displayItem.appendChild(div);
+        });
     })
 }
+
+
 
 const fetchDetails =data=>{
     console.log(data);
