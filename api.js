@@ -37,10 +37,11 @@ const displayPhone = (data)=>{
                 div.classList.add('card');
                 div.classList.add('col-md-3');
                 div.classList.add('col-10');
-                div.classList.add('text-bg-dark');
-                div.style.margin = '10px'
+                div.classList.add('text-bg-gray');
+                div.classList.add('cards');
+                div.style.margin = '20px'
                 div.innerHTML = `
-                    <img src="${item.image}" class="card-img-top" alt="...">
+                    <img src="${item.image}" class="card-img-top w-50 mx-auto" alt="...">
                     <div class="card-body">
                     <h5 class="card-title">${item.phone_name}</h5>
                     <h6 class="card-text">${item.brand}</h6>
@@ -64,10 +65,11 @@ const displayPhone = (data)=>{
                 div.classList.add('card');
                 div.classList.add('col-md-3');
                 div.classList.add('col-10');
-                div.classList.add('text-bg-warning');
-                div.style.margin = '10px'
+                div.classList.add('text-bg-gray');
+                div.classList.add('cards');
+                div.style.margin = '20px'
                 div.innerHTML = `
-                    <img src="${item.image}" class="card-img-top" alt="...">
+                    <img src="${item.image}" class="card-img-top  w-50 mx-auto" alt="...">
                     <div class="card-body">
                       <h5 class="card-title">${item.phone_name}</h5>
                       <h6 class="card-text">${item.brand}</h6>
@@ -89,10 +91,11 @@ const displayPhone = (data)=>{
                 div.classList.add('card');
                 div.classList.add('col-md-3');
                 div.classList.add('col-10');
-                div.classList.add('text-bg-warning');
+                div.classList.add('text-bg-gray');
+                div.classList.add('cards');
                 div.style.margin = '10px'
                 div.innerHTML = `
-                    <img src="${item.image}" class="card-img-top" alt="...">
+                    <img src="${item.image}" class="card-img-top  w-50 mx-auto" alt="...">
                     <div class="card-body">
                       <h5 class="card-title">${item.phone_name}</h5>
                       <h6 class="card-text">${item.brand}</h6>
@@ -124,8 +127,8 @@ const showdetails = (data) =>{
     console.log(data);
     const showdetails = document.getElementById('showdetails');
     showdetails.innerHTML = `
-        <div class="card mx-auto" style="width: 25rem;">
-    <img src="${data.image}" class="card-img-top" alt="...">
+        <div class="card cards mx-auto" style="width: 25rem;">
+    <img src="${data.image}" class="card-img-top w-50 mx-auto" alt="...">
     <div class="card-body">
     <h5 class="card-title">${data.name}</h5>
     <h6 class="card-text">${data.brand}</h6>
