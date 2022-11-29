@@ -55,11 +55,14 @@ const showdetails = (data) =>{
     <h6 class="card-text">${data.brand}</h6>
     </div>
     <ul class="list-group list-group-flush">
-        <li class="list-group-item">${data.releaseDate}</li>
-        <li class="list-group-item">${data.mainFeatures.storage}</li>
-        <li class="list-group-item">${data.mainFeatures.memory}</li>
-        <li class="list-group-item">${data.mainFeatures.chipSet}</li>
-        <li class="list-group-item">${data.mainFeatures.displaySize}</li>
+        <li class="list-group-item">Release Date: ${data.releaseDate}</li>
+        <li class="list-group-item">Storage: ${data.mainFeatures.storage}</li>
+        <li class="list-group-item">Memory: ${data.mainFeatures.memory}</li>
+        <li class="list-group-item">ChipSet: ${data.mainFeatures.chipSet}</li>
+        <li class="list-group-item">Display Size: ${data.mainFeatures.displaySize}</li>
+        <li class="list-group-item">Sensors: ${data.mainFeatures.sensors}</li>
+        <li class="list-group-item">WLAN: ${data.others.WLAN}</li>
+        <li class="list-group-item">Bluetooth: ${data.others.Bluetooth}</li>
     </ul>
     </div>
     `;
